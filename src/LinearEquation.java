@@ -45,12 +45,12 @@ public LinearEquation(int x1, int y1, int x2, int y2) {
     public String positiveOrNegative(double number) {
         if (number > 0) {
             return "+ " + number;
-        } else if (number == 0) {
+        }
+        if (number == 0) {
             return "";
-        } else if (number < 0) {
+        }
+        if (number < 0) {
             return "- " + number*-1;
-        } else if (number == 1) {
-            return "";
         } else {
             return "";
         }
@@ -93,18 +93,34 @@ public LinearEquation(int x1, int y1, int x2, int y2) {
         double rise = rise();
         double run = run();
         String slope = String.valueOf(slope());
-        if (slope.equals("1.0")) {
+        if (slope.equals("1.0") == true) {
             slope = "";
         }
+        if (slope.equals("-1.0") == true)
+            slope = "-";
+        if (slope.equals("0.0")) {
+            equationString = positiveOrNegative(yIntercept());
+        }
         if ((rise() % run()) == 0) {
-             equationString = (slope + "x " + positiveOrNegative(yIntercept()));
+            if (slope() == 1) {
+                equationString = ("x " + positiveOrNegative(yIntercept()));
+            }
+            if (slope() == -1.0) {
+                equationString = ("-x " + positiveOrNegative(yIntercept()));
+            }
+            if (slope() == 0) {
+                equationString = "" + yIntercept();
+            }
+            else {
+                equationString = slope + "x " + positiveOrNegative(yIntercept());
+            }
         } else if (rise % run != 0) {
             if (rise < 0 && run < 0) {
                 run *= -1;
                 rise *= -1;
                 equationString = rise + "/" + (int) run + "x " + positiveOrNegative(yIntercept());
             }
-            if (run > 0 && run > 0) {
+            if (run > 0 && rise > 0) {
                 equationString= (int) rise + "/" + (int) run + "x " + positiveOrNegative(yIntercept());
             }
             if (rise < 0 && run > 0) {
@@ -153,7 +169,7 @@ public LinearEquation(int x1, int y1, int x2, int y2) {
 
       */
     public String lineInfo() {
-        return "The two points are: (" + x1 + ", " + y1 + ") and (" + x1 + ", " + y2 + ")\nThe equation of the line between these points is: " + equation() + "\nThe slope of this line is: " + slope() + "\nThe y-intercept of the line is: " + yIntercept() + "\nThe distance between these two points is: " + distance();
+        return "The two points are: (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")\nThe equation of the line between these points is: " + equation() + "\nThe slope of this line is: " + slope() + "\nThe y-intercept of the line is: " + yIntercept() + "\nThe distance between these two points is: " + distance();
 
     }
 }

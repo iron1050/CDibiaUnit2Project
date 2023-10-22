@@ -16,10 +16,11 @@ public class LinearEquationRunner {
         LinearEquation test = new LinearEquation(x1, y1, x2, y2);
         System.out.println(test.slope());
         System.out.println(test.equation());*/
-        int x1 = -1;
-        int y1 = 3;
-        int x2 = 2;
-        int y2 = 6;
+        int x1 = 16;
+        int y1 = -2;
+        int x2 = 3;
+        int y2 = -2;
+
         LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
         System.out.println("Equation: " + equation.equation());
         System.out.println("Slope: " + equation.slope());
