@@ -42,6 +42,8 @@ public LinearEquation(int x1, int y1, int x2, int y2) {
         return y1 - slope() * x1;
     }
 
+
+    // positiveOrNegative is a method I added in order to format the numbers at strings, to make it easier when I write the equation
     public String positiveOrNegative(double number) {
         if (number > 0) {
             return "+ " + number;
@@ -88,6 +90,8 @@ public LinearEquation(int x1, int y1, int x2, int y2) {
         HINT: Absolute value might be helpful for printing negative y-intercepts as
                subtraction!
      */
+
+    /* Here I used if and else statements to account for all possibilities when making the equation */
     public String equation() {
         String equationString = "";
         double rise = rise();
