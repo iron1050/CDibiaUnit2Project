@@ -2,6 +2,19 @@ import java.util.Scanner;
 public class LinearEquationRunner {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
+        System.out.println("----------------------------------------------------------");
+        System.out.println("  ____ _           _                                    \n" +
+                " / ___| |__  _   _| | ____      ___   _ _ __ ___   __ _ \n" +
+                "| |   | '_ \\| | | | |/ /\\ \\ /\\ / / | | | '_ ` _ \\ / _` |\n" +
+                "| |___| | | | |_| |   <  \\ V  V /| |_| | | | | | | (_| |\n" +
+                " \\____|_|_|_|\\__,_|_|\\_\\  \\_/\\_/  \\__,_|_| |_| |_|\\__,_|\n" +
+                "|  _ \\(_) |__ (_) __ _                                  \n" +
+                "| | | | | '_ \\| |/ _` |                                 \n" +
+                "| |_| | | |_) | | (_| |                                 \n" +
+                "|____/|_|_.__/|_|\\__,_|                                 ");
+        // my friend Ibrahim Toureg gave me the idea to print my name like this
+        System.out.println("----------------------------------------------------------");
+
         System.out.println("Welcome!");
         System.out.print("Enter a pair of coordinates: ");
         String coord1 = s.nextLine();
